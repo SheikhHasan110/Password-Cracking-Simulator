@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacking Simulator: Password Cracking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="matrix-code" id="matrix-code"></div>
+
+    <div class="container">
+        <div class="logo">Created By: MUHAMMAD <span>Hasan</span></div>
+
+        <header>
+            <div >
+            <h1 class="typewriter">PASSWORD CRACKING SIMULATOR<span class="terminal-cursor"></span></h1>
+            </div>
+            </header>
+
+        <main>
+            <section class="module">
+                <h2>HASH GENERATION MODULE</h2>
+                <div class="form-group">
+                    <label for="password">TARGET PASSWORD:</label>
+                    <input type="text" id="password" placeholder="Enter password to hash">
+                    <div id="password-strength-container">
+                        <div id="password-strength"></div>
+                        <div id="password-strength-label"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="algorithm">ENCRYPTION ALGORITHM:</label>
+                    <select id="algorithm">
+                        <option value="md5">MD5 (Insecure)</option>
+                        <option value="sha1">SHA-1 (Vulnerable)</option>
+                        <option value="sha256" selected>SHA-256 (Secure)</option>
+                    </select>
+
+                    <div class="algorithm-info">
+                        <div class="algorithm-item insecure">
+                            <strong>MD5</strong>: Easily crackable, not secure
+                        </div>
+                        <div class="algorithm-item insecure">
+                            <strong>SHA-1</strong>: Vulnerable to attacks
+                        </div>
+                        <div class="algorithm-item secure">
+                            <strong>SHA-256</strong>: Currently secure standard
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-group">
+                        <input type="checkbox" id="use-salt" checked>
+                        <span class="checkmark"></span>
+                        ENABLE SALTING (RECOMMENDED)
+                    </label>
+                </div>
+                <button id="generate-hash-btn">GENERATE HASH</button>
+                <div class="results" id="hash-output">
+                    <p><strong>HASH OUTPUT:</strong><span id="hashed-password">[Awaiting generation]</span></p>
+                    <p><strong>SALT USED:</strong><span id="salt-value">[Random salt if enabled]</span></p>
+                </div>
+            </section>
+
+            <section class="module">
+                <h2>ATTACK SIMULATION MODULE</h2>
+                <div class="form-group">
+                    <label for="attack-type">ATTACK VECTOR:</label>
+                    <select id="attack-type">
+                        <option value="dictionary">Dictionary Attack</option>
+                        <option value="brute-force" selected>Brute-Force Attack</option>
+                    </select>
+                </div>
+
+                <div id="brute-force-options">
+                    <label>CHARACTER SET:</label>
+                    <label class="checkbox-group">
+                        <input type="checkbox" id="charset-lower">
+                        <span class="checkmark"></span>
+                        Lowercase (a-z)
+                    </label>
+                    <label class="checkbox-group">
+                        <input type="checkbox" id="charset-upper">
+                        <span class="checkmark"></span>
+                        Uppercase (A-Z)
+                    </label>
+                    <label class="checkbox-group">
+                        <input type="checkbox" id="charset-nums">
+                        <span class="checkmark"></span>
+                        Numbers (0-9)
+                    </label>
+                    <label class="checkbox-group">
+                        <input type="checkbox" id="charset-special">
+                        <span class="checkmark"></span>
+                        Special (!@#$%)
+                    </label>
+                    <div class="form-group">
+                        <label for="max-length">MAX LENGTH:</label>
+                        <input type="number" id="max-length" value="4" min="1" max="8">
+                    </div>
+                </div>
+
+                <div class="attack-controls">
+                    <button id="start-attack-btn">INITIATE ATTACK</button>
+                    <button id="stop-attack-btn" disabled>ABORT</button>
+                </div>
+
+                <div class="results" id="attack-progress">
+                    <h3>ATTACK PROGRESS</h3>
+                    <p>
+                        <strong>STATUS:</strong>
+                        <span class="status-indicator status-idle" id="status-indicator"></span>
+                        <span id="attack-status">IDLE</span>
+                    </p>
+                    <p><strong>ATTEMPTS:</strong> <span id="attack-attempts">0 </span> / <span id="total-possible-attempts"> N/A</span></p>
+                    <p><strong>SPEED:</strong> <span id="attack-speed">0 </span>   attempts/s</p>
+                    <p><strong>TIME ELAPSED:</strong> <span id="attack-time">0s</span></p>
+                    <p><strong>EST. REMAINING:</strong> <span id="estimated-time-remaining">N/A</span></p>
+                    <p><strong>CURRENT ATTEMPT:</strong> <span id="current-attempt">N/A</span></p>
+
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+
+                    <div class="console-output" id="console-output">
+                        <div class="console-line">> System initialized</div>
+                        <div class="console-line">> Ready for hash generation</div>
+                    </div>
+                </div>
+
+                 <div class="results" id="attack-result" style="display: none;">
+                    <h3>ATTACK SUCCESSFUL! <span style="color:var(--terminal-highlight)">PASSWORD COMPROMISED</span></h3>
+                    <p><strong>PASSWORD FOUND:</strong> <span id="found-password"></span></p>
+                    <p><strong>TOTAL DURATION:</strong> <span id="total-time"></span></p>
+                    <p><strong>ATTEMPTS MADE:</strong> <span id="total-attempts"></span></p>
+                </div>
+            </section>
+        </main>
+
+        </div>
+    <script src="static/script.js"></script>
+</body>
+</html>
