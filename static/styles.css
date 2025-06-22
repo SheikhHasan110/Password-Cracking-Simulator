@@ -123,7 +123,7 @@ h1 {
     font-family: 'Share Tech Mono', monospace;
 }
 
-/* .disclaimer {
+.disclaimer {
     background-color: rgba(255, 0, 60, 0.1);
     border: 1px solid var(--terminal-accent);
     padding: 15px;
@@ -132,7 +132,7 @@ h1 {
     margin: 20px auto;
     font-size: 1rem;
     line-height: 1.6;
-} */
+}
 
 main {
     display: grid;
@@ -140,12 +140,6 @@ main {
     gap: 30px;
     margin-bottom: 30px;
 }
-
-/* @media (min-width: 768px) {
-    main {
-        grid-template-columns: 1fr 1fr;
-    }
-} */
 
 .module {
     background-color: var(--panel-bg);
@@ -475,51 +469,6 @@ button:hover::after {
     50% { opacity: 0; }
 }
 
-/* footer {
-    margin-top: 40px;
-    padding: 25px;
-    background-color: var(--panel-bg);
-    border: 1px solid var(--panel-border);
-    border-radius: 4px;
-}
-
-footer h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 2rem;
-}
-
-.educational-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 25px;
-}
-
-@media (min-width: 992px) {
-    .educational-content {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-.educational-content > div {
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    border-radius: 3px;
-    border: 1px solid var(--terminal-border);
-}
-
-.educational-content h3 {
-    color: var(--terminal-highlight);
-    margin-bottom: 15px;
-    font-size: 1.3rem;
-    font-family: 'Share Tech Mono', monospace;
-}
-
-.educational-content p {
-    font-size: 1rem;
-    line-height: 1.6;
-} */
-
 .algorithm-info {
     display: flex;
     flex-direction: column;
@@ -624,22 +573,3 @@ footer h2 {
 .logo span {
     color: var(--terminal-accent);
 }
-/* .typewriter {
-    font-size: 3rem;
-    overflow: hidden;
-    margin: 0 auto;
-    letter-spacing: .15em;
-    animation:
-        typing 3.5s steps(30, end),
-        blink-caret .75s step-end infinite;
-}
-
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: #00ff41 }
-} */
