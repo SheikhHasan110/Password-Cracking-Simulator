@@ -16,7 +16,7 @@ A web-based application that simulates password hashing and cracking techniques,
     * Displays current attempts, cracking speed (attempts/second), and estimated time remaining.
     * Shows the current password guess during the attack.
 * **Interactive User Interface:**
-    * Clean, terminal-like design with a "typewriter" effect on the title.
+    * Clean, terminal-like design.
     * Console output provides real-time logs of actions and attack status.
     * "Matrix" background effect for an immersive feel.
 
