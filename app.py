@@ -187,11 +187,6 @@ def run_dictionary_attack(target_hash, algorithm, salt):
             found_password = word
             break
 
-        # Removed time.sleep(0.0001) for faster simulation if needed,
-        # but keep it if you want to visibly slow down dictionary attack for demo.
-        # For real-world simulation, remove or make it conditional.
-        # time.sleep(0.0001) # <--- This line is now removed/commented out
-
     attack_running = False
     total_time = round(time.time() - start_time, 1)
 
